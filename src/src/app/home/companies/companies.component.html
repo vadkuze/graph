@@ -1,0 +1,52 @@
+<section class="company">
+  <mat-card>
+
+    <mat-card-content class="company__settings">
+        <mat-form-field>
+          <mat-select 
+              required 
+              [(ngModel)]="currentCategory" 
+              (selectionChange)="onChangeCAT()" 
+              name="category">
+              <mat-option 
+                *ngFor="let c of categories" 
+                [value]="c"> {{c}}
+              </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select 
+            required 
+            [(ngModel)]="currentCompany" 
+            (selectionChange)="onChangeCompany()" 
+            name="names">
+            <mat-option 
+              *ngFor="let n of names" 
+              [value]="n"> {{n}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-content class="company__graph">
+        <x-chartist
+          [data]="data"
+          [type]="type"
+          [options]="options"
+        >
+        </x-chartist>
+    </mat-card-content>
+
+    <mat-card-footer class="company__info">
+        <mat-list>
+            <mat-divider ></mat-divider>        
+            <mat-list-item> Month: {{monthBalance}} </mat-list-item>
+            <mat-list-item *ngIf ="activeBtn" > 
+              <button mat-raised-button (click)="open()" >Open</button> 
+            </mat-list-item>
+            <mat-list-item> Total: {{balance}} </mat-list-item>
+        </mat-list>
+    </mat-card-footer>
+
+  </mat-card>
+</section>

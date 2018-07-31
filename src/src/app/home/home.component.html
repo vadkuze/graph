@@ -1,0 +1,8 @@
+<mat-toolbar>
+  <span>{{name}}</span>
+</mat-toolbar>
+<app-companies 
+  [items]='currentData | mapObject' 
+  (onItemSelected)="selectHandler($event)"
+>
+</app-companies>

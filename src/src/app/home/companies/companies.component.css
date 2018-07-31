@@ -1,0 +1,17 @@
+
+.company__settings,
+.company__info mat-list{
+  display: flex;
+  justify-content: space-between;
+}
+.company__graph{
+    margin-top: 40px;
+    padding: 30px 0;
+    border: 2px solid #ccc;
+    border-radius: 15px;  
+}
+
+mat-card{
+    padding: 25px;
+    margin: 10px 0;
+}
